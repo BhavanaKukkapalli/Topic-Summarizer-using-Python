@@ -1,0 +1,656 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action = "." method = "POST">
+    Search: <input type = "text" name = "topics"><br />
+
+        <input type = "submit" value = "Search" />
+    </form>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Sublime</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <!--
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    -->
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}"/>
+
+    <!-- script
+    ================================================== -->
+    <script src="../static/js/modernizr.js"></script>
+
+    <script type="text/javascript">
+
+function saveTextAsFile()
+{
+	var textToWrite = document.getElementById("summary").value;
+	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+	var fileNameToSaveAs = "sublime_summary.txt";
+
+	var downloadLink = document.createElement("a");
+	downloadLink.download = fileNameToSaveAs;
+	downloadLink.innerHTML = "Download File";
+	if (window.webkitURL != null)
+	{
+		// Chrome allows the link to be clicked
+		// without actually adding it to the DOM.
+		downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+	}
+	else
+	{
+		// Firefox requires the link to be added to the DOM
+		// before it can be clicked.
+		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+		downloadLink.onclick = destroyClickedElement;
+		downloadLink.style.display = "none";
+		document.body.appendChild(downloadLink);
+	}
+
+	downloadLink.click();
+}
+
+
+ </script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <!----<a class="site-logo" href="index.html">
+                <img src="favicon.ico" alt="Homepage">
+            </a>-->
+        </div>
+         <!-- end header-logo -->
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <h3>Navigate to</h3>
+
+            <div class="header-nav__content">
+
+                <ul class="header-nav__list">
+                    <li><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll"  href="#search" title="search">Make your Search</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll"  href="#works" title="works">Work</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                </ul>
+
+                <p>The typical length of this type of summarization is 5 to 10 percent of the main text.On the other hand, the informative summarization systems gives concise information of the main text .The length of informative summary is 20 to 30 percent of the main text .</p>
+
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="https://www.facebook.com/tarun.chellaboyina"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/amritaengineering/?hl=en"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav> <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+        <div class="grid-overlay">
+            <div></div>
+        </div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h1>
+                Sublime Search
+                </h1>
+
+
+                <h3>
+                Study with Us
+                </h3>
+
+                <!--<div class="home-content__video">
+                    <a class="video-link" href="https://player.vimeo.com/video/117310401?color=01aef0&title=0&byline=0&portrait=0" data-lity>
+                        <span class="video-icon"></span>
+                        <span class="video-text">Watch Video</span>
+                    </a>
+                </div>-->
+
+                <div class="home-content__button">
+                    <a href="#search" class="smoothscroll btn btn--primary btn--large">
+                        Search
+                    </a>
+                    <a href="#contact" class="smoothscroll btn btn--large">
+                        Let's Talk
+                    </a>
+                </div>
+
+            </div> <!-- end home-content__main -->
+
+            <div class="home-content__scroll">
+                <a href="#search" class="scroll-link smoothscroll">
+                    Scroll
+                </a>
+            </div>
+
+        </div> <!-- end home-content -->
+
+        <ul class="home-social">
+            <li>
+                <a href="https://www.facebook.com/tarun.chellaboyina"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
+            </li>
+            <li>
+                <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/amritaengineering/?hl=en"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+            </li>
+        </ul> <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+
+    <!-- search
+    ================================================== -->
+    <section id="search" class="s-search target-section">
+
+        <div class="row section-header bit-narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Search Here</h3>
+                <h1 class="display-1">
+                    <table align = center cellpadding=10 px>
+                        <tr>
+                          <th>
+                            <h1>Let's prepare notes!</h1>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>
+                              Please Search for a topic.<br>
+                              We'll provide you the summary :)
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align = center>
+                              <form action="." method="POST">
+                            <img src="../static/images/search_icon.PNG" alt="Search" style="width: 30px; height: 30px; align: left">
+                            <input type="text" name="topics" placeholder="Please enter the topic">
+                            <button type="submit" name="Search">Search</button>
+                                  </form>
+                            <!--<button type="button" name="Summarize">Summarize</button>-->
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <textarea readonly id="summary" name="summary" rows="20" cols="80">{{final}}</textarea>
+                          </td>
+                          <td>
+                            <textarea name="links" rows="20" cols="30">
+                            </textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img src="../static/images/save_icon.PNG" alt="Save" style="width: 30px; height: 30px; align: left" onclick="saveTextAsFile()">
+                            <!--<a href="#" onclick="saveTextAsFile()">-->
+                              <!--<a onclick="loadFileAsText()">Download</a>-->
+                                <!--Download-->
+                              <button onclick="saveTextAsFile()">Save Text to File</button>
+                              <!--<p onclick="saveTextAsFile()"> Download </p>-->
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                </h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row bit-narrow" data-aos="fade-up">
+            <div class="col-full">
+                <p class="lead">
+                    In this new era, where tremendous information is available on the Internet, it is most important to provide the improved mechanism to extract the information quickly and most efficiently . It is very difficult for human beings to manually extract the summary of a large documents of text.
+                </p>
+            </div>
+        </div> <!-- end search-desc -->
+
+
+
+
+    </section> <!-- end s-search -->
+
+
+    <!-- services
+    ================================================== -->
+    <section id='services' class="s-services target-section darker">
+
+        <div class="row section-header bit-narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What we do</h3>
+                <h1 class="display-1">
+                We take pride in what we do. Our services are designed to help
+                you succeed and stand out in your career.
+                </h1>
+            </div>
+        </div> <!-- end section-header -->
+
+
+    <!-- end services -->
+
+    </section> <!-- end s-services -->
+
+
+    <!-- works
+    ================================================== -->
+    <section id="works" class="s-works target-section">
+
+        <div class="row section-header has-bottom-sep narrow target-section" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Our Work</h3>
+                <h1 class="display-1">
+                We create summarised, easy-to-read, important notes by extracting information from well-known and reputed websites;
+                to reduce your reading and boost your grades.
+                </h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row masonry-wrap">
+
+            <div class="masonry">
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="../static/images/portfolio/gallery/g-shutterbug.jpg" class="thumb-link" title="Catch" data-size="1050x700">
+                                <img src="../static/images/portfolio/lady-shutterbug.jpg"
+                                     srcset="../static/images/portfolio/lady-shutterbug.jpg 1x, images/portfolio/lady-shutterbug@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Opportunities
+                            </h3>
+                            <p class="item-folio__cat">
+                                Capture the moment
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Think Aloud">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>And if things don't work out, take another shot.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="../static/images/portfolio/gallery/pic2@2x.jpg" class="thumb-link" title="Hello" data-size="1050x700">
+                                <img src="../static/images/portfolio/pic2.jpg"
+                                     srcset="../static/images/portfolio/pic2.jpg 1x, images/portfolio/pic2@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Dreams
+                            </h3>
+                            <p class="item-folio__cat">
+                                Ambition
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Be Brave">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Work hard play hard.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="../static/images/portfolio/gallery/pic3.jpg" class="thumb-link" title="Crazy is good" data-size="1050x700">
+                                <img src="../static/images/portfolio/.jpg"
+                                     srcset="../static/images/portfolio/pic3@x.jpg 1x, images/portfolio/pic3re.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Ideas
+                            </h3>
+                            <p class="item-folio__cat">
+                                Innovate
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Madness">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Don't be afraid to put forward your ideas.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="../static/images/portfolio/gallery/g-salad.jpg" class="thumb-link" title="Grow Green" data-size="1050x700">
+                                <img src="../static/images/portfolio/salad.jpg"
+                                     srcset="../static/images/portfolio/salad.jpg 1x, images/portfolio/salad@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Food
+                            </h3>
+                            <p class="item-folio__cat">
+                                Greens
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Eat good">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>It is important to eat fresh and follow a healthy diet to keep your mind active.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="../static/images/portfolio/gallery/g-lamp.jpg" class="thumb-link" title="Let there be light" data-size="1050x700">
+                                <img src="../static/images/portfolio/lamp.jpg"
+                                     srcset="../static/images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Lamp
+                            </h3>
+                            <p class="item-folio__cat">
+                                Light
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Light">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Make sure you have sufficient lighting when studying.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="../static/images/portfolio/gallery/pic4.jpg" class="thumb-link" title="Future" data-size="1050x700">
+                                <img src="../static/images/portfolio/pic4x.jpg"
+                                     srcset="../static/images/portfolio/pic4x.jpg 1x, images/portfolio/pic4@2x.jpg 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Future
+                            </h3>
+                            <p class="item-folio__cat">
+                                Today
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Create your future">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Beast Mode: ON</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+
+            </div> <!-- end masonry -->
+
+        </div> <!-- end masonry-wrap -->
+
+    </section> <!-- end s-works -->
+
+
+
+    <!-- testimonies
+    ================================================== -->
+    <section class="s-testimonials">
+
+        <div class="testimonials__icon" data-aos="fade-up"></div>
+
+        <div class="row testimonials narrow">
+
+            <div class="col-full testimonials__slider" data-aos="fade-up">
+
+                <div class="testimonials__slide">
+                    <p>Keep Calm, Study Hard,
+                        And Hope for the Best.
+                    </p>
+
+                </div> <!-- end testimonials__slide -->
+
+                <div class="testimonials__slide">
+                    <p>The secret to getting ahead is
+                        getting started.
+                    </p>
+
+                </div> <!-- end testimonials__slide -->
+
+                <div class="testimonials__slide">
+                    <p>Don't stop until you're proud.</p>
+
+                </div> <!-- end testimonials__slide -->
+
+            </div> <!-- end testimonials__slider -->
+
+        </div> <!-- end testimonials -->
+
+    </section> <!-- end s-testimonials -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+
+            <div class="grid-overlay">
+                <div></div>
+            </div>
+
+        <div class="row section-header narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Keep In Touch</h3>
+                <h1 class="display-1">Feel free to contact us for any <br> queries you may have</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row contact-main" data-aos="fade-up">
+            <div class="col-full">
+                <p class="contact-email">
+                    <a href="mailto:#0">chellaboyina1@gmail.com</a>
+                </p>
+                <p class="contact-address">
+                Amrita Vishwa Vidyapeetham <br>
+                Ettimadai, Coimbatore, 641112
+                </p>
+                <p class="contact-numbers">
+                + (91) 7893730505 &nbsp; + (91) 9994935287
+                </p>
+
+                <ul class="contact-social">
+                    <li>
+                        <a href="https://www.facebook.com/tarun.chellaboyina"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/amritaengineering/?hl=en"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section> <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+        <div class="row">
+            <div class="col-full ss-copyright">
+                <span>© Copyright Susu</span>
+                <span>Design by <a href="">The A-Team</a></span>
+            </div>
+        </div>
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">Back to Top</a>
+        </div>
+    </footer>
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/plugins.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
