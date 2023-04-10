@@ -1,0 +1,3 @@
+https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm
+https://www.geeksforgeeks.org/software-engineering-classical-waterfall-model/
+https://www.javatpoint.com/software-engineering-waterfall-model
